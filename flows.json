@@ -1,0 +1,1438 @@
+[
+    {
+        "id": "dd089ebc01fe5ab7",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6bfe5de64e6d5a7c",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "mqtts://4362f5e9356f4bc4b850633628f7d5ad.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "clientid": "nodered-client",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4dd31096d89c4125",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "76653f3c5c8c129c",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "3cbd9d1d6bc9003f",
+        "type": "ui-page",
+        "name": "Página principal",
+        "ui": "4dd31096d89c4125",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "76653f3c5c8c129c",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "8fa404026d68661b",
+        "type": "ui-group",
+        "name": "Controle das Válvulas",
+        "page": "3cbd9d1d6bc9003f",
+        "width": 4,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7d52c24522c05f8e",
+        "type": "ui-group",
+        "name": "Monitoramento de Volume de Água na Entrada",
+        "page": "3cbd9d1d6bc9003f",
+        "width": 6,
+        "height": 1,
+        "order": 5,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f9449db167ca2e03",
+        "type": "ui-group",
+        "name": "Monitoramento do Volume de Água na Saída",
+        "page": "3cbd9d1d6bc9003f",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "88f54e42f3e286aa",
+        "type": "ui-group",
+        "name": "Controle de fatura",
+        "page": "3cbd9d1d6bc9003f",
+        "width": 4,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6a2849c3ac211b83",
+        "type": "ui-group",
+        "name": "Controle de Vazamento",
+        "page": "3cbd9d1d6bc9003f",
+        "width": 4,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "eeb15ead8fb641bb",
+        "type": "ui-spacer",
+        "group": "88f54e42f3e286aa",
+        "name": "spacer",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "eeb15f231e79a099",
+        "type": "ui-spacer",
+        "group": "8fa404026d68661b",
+        "name": "spacer",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "06e3c452cc58047e",
+        "type": "mqtt in",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/agua/entrada",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6bfe5de64e6d5a7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 580,
+        "y": 1060,
+        "wires": [
+            [
+                "b475ed78f282f009",
+                "dd7203d33375e40b",
+                "bb11b444bb11a451"
+            ]
+        ]
+    },
+    {
+        "id": "d649c2721fd0a118",
+        "type": "mqtt out",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/valvula/entrada",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6bfe5de64e6d5a7c",
+        "x": 650,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "94a8f83c1b25fa78",
+        "type": "mqtt in",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/valvula/saida",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6bfe5de64e6d5a7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 820,
+        "wires": [
+            [
+                "1f08ce16fd524321"
+            ]
+        ]
+    },
+    {
+        "id": "c6d269fbd6cd1e9c",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "8fa404026d68661b",
+        "order": 3,
+        "width": 2,
+        "height": 0,
+        "name": "",
+        "label": "status-saida",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "8a0618a2af579eb9",
+        "type": "ui-switch",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "label": "Válvula da Saída",
+        "group": "8fa404026d68661b",
+        "order": 2,
+        "width": 2,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "iot/valvula/saida",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-left",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 330,
+        "y": 920,
+        "wires": [
+            [
+                "b33d2afdcb861ade"
+            ]
+        ]
+    },
+    {
+        "id": "b33d2afdcb861ade",
+        "type": "mqtt out",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/valvula/saida",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6bfe5de64e6d5a7c",
+        "x": 640,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "1f08ce16fd524321",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 1",
+        "func": "if (msg.payload==0){\n\n    msg.payload = \"Fechada\";\n}\nelse{\n    msg.payload = \"Aberta\";\n}\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 820,
+        "wires": [
+            [
+                "c6d269fbd6cd1e9c"
+            ]
+        ]
+    },
+    {
+        "id": "dd5727658a6c425a",
+        "type": "ui-switch",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "label": "Válvula da Entrada",
+        "group": "8fa404026d68661b",
+        "order": 4,
+        "width": 2,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "iot/valvula/entrada",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-left",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 330,
+        "y": 700,
+        "wires": [
+            [
+                "d649c2721fd0a118"
+            ]
+        ]
+    },
+    {
+        "id": "4b924339a6af0d59",
+        "type": "mqtt in",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/valvula/entrada",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6bfe5de64e6d5a7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 620,
+        "wires": [
+            [
+                "624cd8b74c658206"
+            ]
+        ]
+    },
+    {
+        "id": "de6fd096d8556487",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "8fa404026d68661b",
+        "order": 5,
+        "width": 2,
+        "height": 0,
+        "name": "",
+        "label": "status-entrada",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "624cd8b74c658206",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 2",
+        "func": "if (msg.payload==0){\n\n    msg.payload = \"Fechada\";\n}\nelse{\n    msg.payload = \"Aberta\";\n}\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 620,
+        "wires": [
+            [
+                "de6fd096d8556487"
+            ]
+        ]
+    },
+    {
+        "id": "8bf5b2d5b794fb7d",
+        "type": "inject",
+        "z": "dd089ebc01fe5ab7",
+        "name": "Chamada para inicial para atualização do gráfico",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "x": 430,
+        "y": 1380,
+        "wires": [
+            [
+                "b59a1390414b0829",
+                "97e4f2f181a057c4",
+                "811567254a962d29"
+            ]
+        ]
+    },
+    {
+        "id": "b59a1390414b0829",
+        "type": "http request",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "tdwoglxvqtmcqcuikzyb.supabase.co/rest/v1/leituras?sensor=eq.iot%2Fagua%2Fentrada&order=created_at.asc",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "apikey",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODczNTAsImV4cCI6MjA5Njc2MzM1MH0.AI4ab3iYNLwndm9pjjyRkIu8yOFNbL26lHACxkhoGU0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTE4NzM1MCwiZXhwIjoyMDk2NzYzMzUwfQ.owQ-JDSzKQh6avTu6N9EoxoKjjnVXqjpZlwm-OHfdNQ"
+            }
+        ],
+        "x": 1260,
+        "y": 1380,
+        "wires": [
+            [
+                "ee0f7bbfafc91803"
+            ]
+        ]
+    },
+    {
+        "id": "2e60f41d9f426c0c",
+        "type": "ui-chart",
+        "z": "dd089ebc01fe5ab7",
+        "group": "7d52c24522c05f8e",
+        "name": "Volume Acumulado Entrada",
+        "label": "Consumo acumulado",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timestamp",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "1000",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1840,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee0f7bbfafc91803",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "Atualização do gráfico",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Erro na requisição: \" + msg.statusCode);\n    return null;\n}\n\nconst dados = Array.isArray(msg.payload) \n    ? msg.payload \n    : JSON.parse(msg.payload);\n\nif (dados.length === 0) return null;\n\n// Limpa os dois gráficos antes de carregar histórico\nnode.send([\n    {payload: [], action: \"replace\" },\n    { topic: \"Volume Instantâneo (L)\", payload: [], action: \"replace\" },\n    { topic: \"Volume Acumulado (L)\", payload: [], action: \"replace\" }\n]);\n\nflow.set('acumulado_entrada', 0);\nflow.set('acumulado_saida', 0);\nflow.set('inicioColeta_entrada', null);\nflow.set('jaCarregou_acumulado_saida', false);\n\n// Acumula para o gráfico de acumulado\nlet acumulado = 0;\n\ndados.forEach(d => {\n    node.warn({ created_at: d.created_at, vazao_lmin: d.vazao_lmin, volume_acumulado_l: d.volume_acumulado_l });\n    acumulado += parseFloat(d.vazao_lmin);\n\n    node.send([\n        {\n            payload: acumulado,\n            timestamp: new Date(d.created_at).getTime()\n        },\n        {\n            topic: \"Volume Instantâneo (L)\",\n            payload: parseFloat(d.vazao_lmin),\n            timestamp: new Date(d.created_at).getTime()\n        },\n        {\n            topic: \"Volume Acumulado (L)\",\n            payload: parseFloat(acumulado.toFixed(4)),\n            timestamp: new Date(d.created_at).getTime()\n        }\n    ]);\n});\n\n// Salva o acumulado final para o MQTT continuar de onde parou\nflow.set('acumulado_entrada', acumulado);\n\nreturn null;",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 1380,
+        "wires": [
+            [
+                "2e8e6b5adb10c504"
+            ],
+            [
+                "b04b1178f99f4694"
+            ],
+            [
+                "2e60f41d9f426c0c"
+            ]
+        ]
+    },
+    {
+        "id": "b04b1178f99f4694",
+        "type": "ui-chart",
+        "z": "dd089ebc01fe5ab7",
+        "group": "7d52c24522c05f8e",
+        "name": "Volume Instantâneo Entrada",
+        "label": "Consumo por horário",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timestamp",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "1000",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1840,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b475ed78f282f009",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 3",
+        "func": "const acumulado = context.get('acumulado') || {};\nconst sensor = msg.topic;\nconst volumeIncremental = parseFloat(msg.payload);\n\n// Acumula volume\nconst volumeAtual = (acumulado[sensor] || 0) + volumeIncremental;\nacumulado[sensor] = volumeAtual;\ncontext.set('acumulado_entrada', acumulado);\n\n// Mensagem para o Supabase\nconst msgSupabase = {\n    payload: {\n        sensor: sensor,\n        vazao_lmin: volumeIncremental,\n        // volume_acumulado_l: parseFloat(volumeAtual.toFixed(4))\n    }\n};\n\nreturn msgSupabase;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1060,
+        "wires": [
+            [
+                "4b7f07ab8c4782b8"
+            ]
+        ]
+    },
+    {
+        "id": "4b7f07ab8c4782b8",
+        "type": "http request",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://tdwoglxvqtmcqcuikzyb.supabase.co/rest/v1/leituras",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "apikey",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODczNTAsImV4cCI6MjA5Njc2MzM1MH0.AI4ab3iYNLwndm9pjjyRkIu8yOFNbL26lHACxkhoGU0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTE4NzM1MCwiZXhwIjoyMDk2NzYzMzUwfQ.owQ-JDSzKQh6avTu6N9EoxoKjjnVXqjpZlwm-OHfdNQ"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Prefer",
+                "valueType": "other",
+                "valueValue": "return=minimal"
+            }
+        ],
+        "x": 1860,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd7203d33375e40b",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 5",
+        "func": "const volumeIncremental = parseFloat(msg.payload);\nconst acumulado = (flow.get('acumulado_entrada') || 0) + volumeIncremental;\nflow.set('acumulado_entrada', acumulado);\n\nconst agora = Date.now();\n\nnode.send([\n    {\n        payload: acumulado\n    },\n    {\n        topic: \"Volume Instantâneo (L)\",\n        payload: volumeIncremental,\n        timestamp: agora\n    },\n    {\n        topic: \"Volume Acumulado (L)\",\n        payload: parseFloat(acumulado.toFixed(4)),\n        timestamp: agora\n    }\n]);\n\nreturn null;\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1460,
+        "y": 1160,
+        "wires": [
+            [
+                "2e8e6b5adb10c504"
+            ],
+            [
+                "b04b1178f99f4694"
+            ],
+            [
+                "2e60f41d9f426c0c"
+            ]
+        ]
+    },
+    {
+        "id": "65aa1cd7b413cec2",
+        "type": "mqtt in",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "topic": "iot/agua/saida",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6bfe5de64e6d5a7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 570,
+        "y": 1520,
+        "wires": [
+            [
+                "3d9ec7846d5ef6ee",
+                "258a581e49d04094",
+                "bb11b444bb11a451"
+            ]
+        ]
+    },
+    {
+        "id": "3350d545c1527641",
+        "type": "inject",
+        "z": "dd089ebc01fe5ab7",
+        "name": "Chamada para inicial para atualização do gráfico",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "x": 430,
+        "y": 1680,
+        "wires": [
+            [
+                "a122a369198bb25b"
+            ]
+        ]
+    },
+    {
+        "id": "f589c2022cd58bf3",
+        "type": "http request",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "apikey",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODczNTAsImV4cCI6MjA5Njc2MzM1MH0.AI4ab3iYNLwndm9pjjyRkIu8yOFNbL26lHACxkhoGU0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTE4NzM1MCwiZXhwIjoyMDk2NzYzMzUwfQ.owQ-JDSzKQh6avTu6N9EoxoKjjnVXqjpZlwm-OHfdNQ"
+            }
+        ],
+        "x": 1320,
+        "y": 1680,
+        "wires": [
+            [
+                "82fe2207d50a080d"
+            ]
+        ]
+    },
+    {
+        "id": "6144de48f4552b14",
+        "type": "ui-chart",
+        "z": "dd089ebc01fe5ab7",
+        "group": "f9449db167ca2e03",
+        "name": "Volume Acumulado Saída",
+        "label": "Consumo acumulado",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timestamp",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "1000",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1830,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82fe2207d50a080d",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "Atualização do gráfico",
+        "func": "if (msg.statusCode !== 200) {\n    node.error(\"Erro na requisição: \" + msg.statusCode);\n    return null;\n}\n\nconst dados = Array.isArray(msg.payload) \n    ? msg.payload \n    : JSON.parse(msg.payload);\n\nif (dados.length === 0) return null;\n\n// Limpa os dois gráficos antes de carregar histórico\nnode.send([\n    { topic: \"Volume Instantâneo (L)\", payload: [], action: \"replace\" },\n    { topic: \"Volume Acumulado (L)\", payload: [], action: \"replace\" }\n]);\n\n// Acumula para o gráfico de acumulado\nlet acumulado = 0;\n\ndados.forEach(d => {\n    acumulado += parseFloat(d.vazao_lmin);\n\n    node.send([\n        {\n            topic: \"Volume Instantâneo (L)\",\n            payload: parseFloat(d.vazao_lmin),\n            timestamp: new Date(d.created_at).getTime()\n        },\n        {\n            topic: \"Volume Acumulado (L)\",\n            payload: parseFloat(acumulado.toFixed(4)),\n            timestamp: new Date(d.created_at).getTime()\n        }\n    ]);\n});\n\n// Salva o acumulado final para o MQTT continuar de onde parou\nflow.set('acumulado_saida', acumulado);\n\nreturn null;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 1680,
+        "wires": [
+            [
+                "9e4c124dd42e57bd"
+            ],
+            [
+                "6144de48f4552b14"
+            ]
+        ]
+    },
+    {
+        "id": "9e4c124dd42e57bd",
+        "type": "ui-chart",
+        "z": "dd089ebc01fe5ab7",
+        "group": "f9449db167ca2e03",
+        "name": "Volume Instantâneo Saída",
+        "label": "Consumo por horário",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timestamp",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "1000",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1840,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a122a369198bb25b",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "Criação da API URL",
+        "func": "const ultimoTimestamp = flow.get('ultimoTimestamp_saida') || null;\nconst timestampEncoded = encodeURIComponent(ultimoTimestamp);\n\nif (ultimoTimestamp) {\n    // Busca só os registros novos\n    msg.url = `https://tdwoglxvqtmcqcuikzyb.supabase.co/rest/v1/leituras?sensor=eq.iot%2Fagua%2Fsaida&created_at=gt.${timestampEncoded}&order=created_at.asc`;\n} else {\n    // Primeira carga — busca tudo\n    msg.url = `https://tdwoglxvqtmcqcuikzyb.supabase.co/rest/v1/leituras?sensor=eq.iot%2Fagua%2Fsaida&order=created_at.asc`;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1680,
+        "wires": [
+            [
+                "f589c2022cd58bf3"
+            ]
+        ]
+    },
+    {
+        "id": "3d9ec7846d5ef6ee",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 4",
+        "func": "const acumulado = context.get('acumulado_saida') || {};\nconst sensor = msg.topic;\nconst volumeIncremental = parseFloat(msg.payload);\n\n// Acumula volume\nconst volumeAtual = (acumulado[sensor] || 0) + volumeIncremental;\nacumulado[sensor] = volumeAtual;\ncontext.set('acumulado_saida', acumulado);\n\n// Mensagem para o Supabase\nconst msgSupabase = {\n    payload: {\n        sensor: sensor,\n        vazao_lmin: volumeIncremental,\n        // volume_acumulado_l: parseFloat(volumeAtual.toFixed(4))\n    }\n};\n\nreturn msgSupabase;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1500,
+        "wires": [
+            [
+                "aee8799c1efb5a3f"
+            ]
+        ]
+    },
+    {
+        "id": "aee8799c1efb5a3f",
+        "type": "http request",
+        "z": "dd089ebc01fe5ab7",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://tdwoglxvqtmcqcuikzyb.supabase.co/rest/v1/leituras",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "apikey",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODczNTAsImV4cCI6MjA5Njc2MzM1MH0.AI4ab3iYNLwndm9pjjyRkIu8yOFNbL26lHACxkhoGU0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkd29nbHh2cXRtY3FjdWlrenliIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTE4NzM1MCwiZXhwIjoyMDk2NzYzMzUwfQ.owQ-JDSzKQh6avTu6N9EoxoKjjnVXqjpZlwm-OHfdNQ"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Prefer",
+                "valueType": "other",
+                "valueValue": "return=minimal"
+            }
+        ],
+        "x": 1860,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "258a581e49d04094",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 5",
+        "func": "const volumeIncremental = parseFloat(msg.payload);\nconst acumulado = (flow.get('acumulado_saida') || 0) + volumeIncremental;\nflow.set('acumulado_saida', acumulado);\n\nconst agora = Date.now();\n\nnode.send([\n    {\n        topic: \"Volume Instantâneo (L)\",\n        payload: volumeIncremental,\n        timestamp: agora\n    },\n    {\n        topic: \"Volume Acumulado (L)\",\n        payload: parseFloat(acumulado.toFixed(4)),\n        timestamp: agora\n    }\n]);\n\nreturn null;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1580,
+        "wires": [
+            [
+                "9e4c124dd42e57bd"
+            ],
+            [
+                "6144de48f4552b14"
+            ]
+        ]
+    },
+    {
+        "id": "2e8e6b5adb10c504",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 6",
+        "func": "const volumeLitros = flow.get('acumulado_entrada') || 0;\nconst consumoM3 = volumeLitros / 1000;\n\nconst TAXA_FIXA = 11.62;\nconst FAIXAS = [\n    { limite: 7,  preco: 4.30  },\n    { limite: 13, preco: 5.15  },\n    { limite: 20, preco: 10.21 },\n    { limite: 30, preco: 14.81 },\n    { limite: 45, preco: 22.22 },\n    { limite: Infinity, preco: 28.88 }\n];\n\nfunction calcularValorAgua(m3) {\n    let valorVariavel = 0;\n    let restante = m3;\n    let limiteAnterior = 0;\n    for (const faixa of FAIXAS) {\n        if (restante <= 0) break;\n        const volumeFaixa = Math.min(restante, faixa.limite - limiteAnterior);\n        valorVariavel += volumeFaixa * faixa.preco;\n        restante -= volumeFaixa;\n        limiteAnterior = faixa.limite;\n    }\n    return TAXA_FIXA + valorVariavel;\n}\n\n// Usa o timestamp da leitura (histórico) ou agora (tempo real)\nconst timestampLeitura = msg.timestamp || Date.now();\n\nlet historico = flow.get('historicoRegressao_entrada') || [];\nhistorico.push({ t: timestampLeitura, v: consumoM3 });\n\nconst JANELA_MAX = 50;\nif (historico.length > JANELA_MAX) {\n    historico = historico.slice(-JANELA_MAX);\n}\nflow.set('historicoRegressao_entrada', historico);\n\nfunction regressaoLinear(pontos) {\n    const n = pontos.length;\n    if (n < 2) return { a: 0, b: pontos[0]?.v || 0 };\n\n    const t0 = pontos[0].t;\n    const xs = pontos.map(p => (p.t - t0));\n    const ys = pontos.map(p => p.v);\n\n    const somaX = xs.reduce((s, x) => s + x, 0);\n    const somaY = ys.reduce((s, y) => s + y, 0);\n    const somaXY = xs.reduce((s, x, i) => s + x * ys[i], 0);\n    const somaXX = xs.reduce((s, x) => s + x * x, 0);\n\n    const denom = (n * somaXX - somaX * somaX);\n    const a = denom !== 0 ? (n * somaXY - somaX * somaY) / denom : 0;\n    const b = (somaY - a * somaX) / n;\n\n    return { a, b, t0 };\n}\n\nconst { a } = regressaoLinear(historico);\nconst consumoPorMs = Math.max(a, 0);\nconst MS_NO_MES = 30 * 24 * 60 * 60 * 1000;\nconst consumoProjetadoM3 = consumoM3 + (consumoPorMs * MS_NO_MES * (historico.length / JANELA_MAX));\n\nlet inicioColeta = flow.get('inicioColeta_entrada');\nif (!inicioColeta) {\n    inicioColeta = timestampLeitura;\n    flow.set('inicioColeta_entrada', inicioColeta);\n}\nconst horasDecorridas = Math.max((timestampLeitura - inicioColeta) / (1000 * 60 * 60), 0.01);\nconst consumoProjetadoFallback = (consumoM3 / horasDecorridas) * 720;\n\nconst projecaoFinal = historico.length >= 5 ? consumoProjetadoM3 : consumoProjetadoFallback;\n\nconst valorAgua = calcularValorAgua(consumoM3);\nconst totalAtual = valorAgua * 2;\n\nconst valorAguaProjetado = calcularValorAgua(Math.max(projecaoFinal, 0));\nconst totalProjetado = valorAguaProjetado * 2;\n\nmsg.payload = {\n    consumoAtualM3: consumoM3.toFixed(3),\n    consumoAtualL: volumeLitros.toFixed(1),\n    faturaAtual: totalAtual.toFixed(2),\n    consumoProjetadoM3: Math.max(projecaoFinal, 0).toFixed(3),\n    faturaProjetada: totalProjetado.toFixed(2)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 1140,
+        "wires": [
+            [
+                "4f9c91b4ce8d4b56"
+            ]
+        ]
+    },
+    {
+        "id": "4f9c91b4ce8d4b56",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 7",
+        "func": "const msg1 = { payload: `${msg.payload.consumoAtualM3} m³` };\nconst msg2 = { payload: `R$ ${msg.payload.faturaAtual}` };\nconst msg3 = { payload: `${msg.payload.consumoProjetadoM3} m³` };\nconst msg4 = { payload: `R$ ${msg.payload.faturaProjetada}` };\n\nreturn [msg1, msg2, msg3, msg4];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1920,
+        "y": 1140,
+        "wires": [
+            [
+                "9db2d1ab5b36ddac"
+            ],
+            [
+                "bf53ff8e0453459d"
+            ],
+            [
+                "0dbb72fbb94abf35"
+            ],
+            [
+                "33a0d3a28dab1b8d"
+            ]
+        ]
+    },
+    {
+        "id": "bf53ff8e0453459d",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "88f54e42f3e286aa",
+        "order": 2,
+        "width": 2,
+        "height": 0,
+        "name": "Fatura até agora",
+        "label": "Fatura até agora",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2170,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "0dbb72fbb94abf35",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "88f54e42f3e286aa",
+        "order": 5,
+        "width": 2,
+        "height": 0,
+        "name": "Consumo Projetado",
+        "label": "Consumo Projetado",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2180,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "33a0d3a28dab1b8d",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "88f54e42f3e286aa",
+        "order": 3,
+        "width": 2,
+        "height": 0,
+        "name": "Fatura Projetada",
+        "label": "Fatura Projetada",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2170,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "9db2d1ab5b36ddac",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "88f54e42f3e286aa",
+        "order": 4,
+        "width": 2,
+        "height": 0,
+        "name": "Consumo atual",
+        "label": "Consumo atual",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2160,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "97e4f2f181a057c4",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 8",
+        "func": "// Reset dos gráficos e fatura\nflow.set('acumulado_entrada', 0);\nflow.set('acumulado_saida', 0);\nflow.set('inicioColeta_entrada', null);\nflow.set('jaCarregou_acumulado_saida', false);\n\nmsg.payload = \"0\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 1280,
+        "wires": [
+            [
+                "dd7203d33375e40b"
+            ]
+        ]
+    },
+    {
+        "id": "bb11b444bb11a451",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 9",
+        "func": "if (!msg.topic) {\n    msg.payload = {\n        status: \"Coletando dados...\",\n        mediaEntrada: null,\n        mediaSaida: null,\n        diferenca: null\n    };\n    return msg;\n}\n\nconst JANELA = 10;\nconst TOLERANCIA_L = 0.5;\nconst AMOSTRAS_MIN_ALERTA = 5;\n\nconst sensor = msg.topic.includes('entrada') ? 'entrada' : 'saida';\nconst valor = parseFloat(msg.payload);\n\n// Recupera ou inicializa o histórico de cada sensor\nlet historicoEntrada = flow.get('historicoVazamento_entrada') || [];\nlet historicoSaida = flow.get('historicoVazamento_saida') || [];\n\nif (sensor === 'entrada') {\n    historicoEntrada.push(valor);\n    if (historicoEntrada.length > JANELA) historicoEntrada.shift();\n    flow.set('historicoVazamento_entrada', historicoEntrada);\n} else {\n    historicoSaida.push(valor);\n    if (historicoSaida.length > JANELA) historicoSaida.shift();\n    flow.set('historicoVazamento_saida', historicoSaida);\n}\n\n// Só avalia quando os dois sensores já têm dados suficientes\nif (historicoEntrada.length < JANELA || historicoSaida.length < JANELA) {\n    msg.payload = {\n        status: \"Coletando dados...\",\n        mediaEntrada: null,\n        mediaSaida: null,\n        diferenca: null\n    };\n    return msg;\n}\n\nconst mediaEntrada = historicoEntrada.reduce((a, b) => a + b, 0) / historicoEntrada.length;\nconst mediaSaida = historicoSaida.reduce((a, b) => a + b, 0) / historicoSaida.length;\nconst diferenca = mediaEntrada - mediaSaida;\n\n// Contador de amostras consecutivas com diferença acima da tolerância\nlet contadorAlerta = flow.get('contadorAlertaVazamento') || 0;\n\nif (diferenca > TOLERANCIA_L) {\n    contadorAlerta++;\n} else {\n    contadorAlerta = 0;\n}\nflow.set('contadorAlertaVazamento', contadorAlerta);\n\nconst vazamentoDetectado = contadorAlerta >= AMOSTRAS_MIN_ALERTA;\n\nmsg.payload = {\n    status: vazamentoDetectado ? \"⚠️ Possível vazamento detectado\" : \"✅ Normal\",\n    mediaEntrada: mediaEntrada.toFixed(3),\n    mediaSaida: mediaSaida.toFixed(3),\n    diferenca: diferenca.toFixed(3),\n    vazamentoDetectado\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1940,
+        "wires": [
+            [
+                "cb3795f4b21986f7"
+            ]
+        ]
+    },
+    {
+        "id": "cb3795f4b21986f7",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 10",
+        "func": "const status = { payload: msg.payload.status };\nconst mediaEntrada = { payload: `${msg.payload.mediaEntrada || '-'} L` };\nconst mediaSaida = { payload: `${msg.payload.mediaSaida || '-'} L` };\nconst diferenca = { payload: `${msg.payload.diferenca || '-'} L` };\n\nreturn [status, mediaEntrada, mediaSaida, diferenca];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1940,
+        "wires": [
+            [
+                "bf2f00eda5492372"
+            ],
+            [
+                "cee35bb0d05ae0be"
+            ],
+            [
+                "5ae9bcf4efca6e09"
+            ],
+            [
+                "2d09ce119da7bd38"
+            ]
+        ]
+    },
+    {
+        "id": "cee35bb0d05ae0be",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "6a2849c3ac211b83",
+        "order": 2,
+        "width": 2,
+        "height": 0,
+        "name": "Média Entrada",
+        "label": "Média Entrada:                       ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1640,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "5ae9bcf4efca6e09",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "6a2849c3ac211b83",
+        "order": 3,
+        "width": 2,
+        "height": 0,
+        "name": "Média Saída",
+        "label": "Média Saída:              ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1630,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "2d09ce119da7bd38",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "6a2849c3ac211b83",
+        "order": 4,
+        "width": 4,
+        "height": 0,
+        "name": "Diferença",
+        "label": "Diferença:      ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1620,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "bf2f00eda5492372",
+        "type": "ui-text",
+        "z": "dd089ebc01fe5ab7",
+        "group": "6a2849c3ac211b83",
+        "order": 1,
+        "width": 4,
+        "height": 0,
+        "name": "Status",
+        "label": "Status:                      ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1610,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "811567254a962d29",
+        "type": "function",
+        "z": "dd089ebc01fe5ab7",
+        "name": "function 11",
+        "func": "// Reset da regressão de projeção de fatura\nflow.set('historicoRegressao_entrada', []);\n\n// Reset da detecção de vazamento\nflow.set('historicoVazamento_entrada', []);\nflow.set('historicoVazamento_saida', []);\nflow.set('contadorAlertaVazamento', 0);\n\nmsg.payload = \"0\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1940,
+        "wires": [
+            [
+                "bb11b444bb11a451"
+            ]
+        ]
+    },
+    {
+        "id": "3d93f94334606b26",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
