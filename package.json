@@ -1,0 +1,12 @@
+{
+  "name": "node-red-iot-agua",
+  "version": "1.0.0",
+  "description": "Node-RED para monitoramento de água",
+  "scripts": {
+    "start": "node-red"
+  },
+  "dependencies": {
+    "node-red": "^4.0.0",
+    "@flowfuse/node-red-dashboard": "^1.0.0"
+  }
+}
